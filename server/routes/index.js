@@ -26,7 +26,7 @@ router.get(
 router.patch(
   '/cars/:id',
   asyncHandler((req, res) => {
-    const { resp, status } = updateStatus(req.params.id, req.body.title);
+    const { resp, status } = updateStatus(req.params.id, req.body.status);
     res.status(status).send(resp);
   }),
 );

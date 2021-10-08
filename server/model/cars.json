@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Top Deal Of Week! *RESERVED*",
-    "status": "available",
+    "title": "Top Deal Of Week!",
+    "status": "sold",
     "price": "189.455 $",
     "image": "http://localhost:3000/images/car1.png",
     "miles": 11321,
@@ -43,7 +43,7 @@
   },
   {
     "id": 4,
-    "title": "Fair Price",
+    "title": "Good Price",
     "status": "available",
     "price": "12.333 $",
     "image": "http://localhost:3000/images/car4.png",
@@ -57,7 +57,7 @@
   },
   {
     "id": 5,
-    "title": "Fair Price",
+    "title": "Very Cool",
     "status": "available",
     "price": "182.900 $",
     "image": "http://localhost:3000/images/car5.png",
@@ -99,7 +99,7 @@
   },
   {
     "id": 8,
-    "title": "Fair Price",
+    "title": "Looks Good",
     "status": "available",
     "price": "102.100 $",
     "image": "http://localhost:3000/images/car8.png",

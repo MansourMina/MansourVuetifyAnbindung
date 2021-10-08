@@ -11,7 +11,10 @@
 
       <v-img height="250" :src="c.image"></v-img>
 
-      <v-card-title>{{ c.title }}</v-card-title>
+      <v-card-title
+        >{{ c.title 
+        }} <span v-if="c.status == 'sold'"> *RESERVED*</span></v-card-title
+      >
 
       <v-card-text>
         <v-row align="center" class="mx-0 text-subtitle-1">
@@ -20,10 +23,7 @@
 
         <p class="mx-0 mt-3 text-subtitle-">Year: {{ c.yearOfMake }}</p>
         <p class="mt-0  text-subtitle-">Miles: {{ c.miles }}</p>
-        <p
-          class="mx-0 mt-3 text-subtitle-"
-          v-if="!c.title.includes('RESERVED')"
-        >
+        <p class="mx-0 mt-3 text-subtitle-" v-if="c.status != 'sold'">
           Price: {{ c.price }}
         </p>
         <p class="mx-0 mt-3 text-subtitle-" v-else>Price: N/A</p>
@@ -31,7 +31,7 @@
         <v-divider class=""></v-divider>
       </v-card-text>
 
-      <v-card-actions v-if="!c.title.includes('RESERVED')">
+      <v-card-actions v-if="c.status != 'sold'">
         <div class=" ml-auto">
           <v-btn
             color="white"
@@ -55,7 +55,6 @@ export default {
     },
   },
   name: 'CarCard',
-
 };
 </script>
 <style></style>

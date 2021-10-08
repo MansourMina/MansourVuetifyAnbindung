@@ -35,7 +35,8 @@
           </thead>
           <tbody>
             <tr>
-              <td>{{ car.price }}</td>
+              <td v-if="car.status != 'sold'">{{ car.price }}</td>
+              <td v-else>N/A</td>
               <td>{{ car.miles }}</td>
               <td>{{ car.yearOfMake }}</td>
               <td v-if="car.owner">
@@ -93,8 +94,8 @@ export default {
         url: 'http://localhost:3000/cars/' + this.id,
         method: 'GET',
       });
-
       this.car = data[0];
+      console.log(this.car);
     },
 
     async buyCar() {
@@ -103,11 +104,10 @@ export default {
         method: 'PATCH',
         contentType: 'application/json',
         data: {
-          title: this.car.title + ' *RESERVED*',
+          status: 'sold',
         },
       });
       this.getCarById();
-      console.log(this.car.title);
     },
   },
 };

@@ -8,10 +8,10 @@ function getCar(id) {
   return cars.filter((el) => el.id === Number(id));
 }
 
-function updateStatus(id, title) {
+function updateStatus(id, status) {
   const car = cars.find((el) => el.id == id);
   if (car) {
-    car.title = title;
+    car.status = status;
     return {
       resp: `Car with the id ${id} changed`,
       status: 200,
